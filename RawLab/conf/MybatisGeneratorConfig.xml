@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- http://www.mybatis.org/generator/configreference/xmlconfig.html -->
+
+<generatorConfiguration>
+	<!--
+
+         또는 클래스 패스로 jdbc드라이브가 지정 되어 있거나 [javahome]\jre\lib\ext 에 복사 되어 있어도 됨
+    export CLASSPATH=$CLASSPATH:/Users/hoyacom/Dev/javalibrary/sqljdbc-4.1.jar
+    
+    <classPathEntry location="../ams_env/javaLibs/sqljdbc-4.1.jar"/>
+
+    CLASSPATH 환경변수에 Jar 패스 설정 
+    <classPathEntry location="/Users/hoyacom/Dev/javalibrary/sqljdbc-4.2.jar"/>
+    <classPathEntry location="/Users/hoyacom/Dev/javalibrary/mysql-connector-java-5.1.40-bin.jar" />
+    <classPathEntry location="C:/Users/lhb/.m2/repository/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" />
+    <classPathEntry location="C:/Users/hoyac/Dev/JavaLibrary/mysql-connector-java-5.1.40-bin.jar" />
+	-->
+
+    <context id="skymshop_commons" defaultModelType="conditional" targetRuntime="MyBatis3">
+
+    <!-- 
+        <plugin type="org.mybatis.generator.plugins.CachePlugin">
+            <property name="cache_eviction" value="LRU"/>
+            <property name="cache_flushInterval" value="6000"/>
+            <property name="cache_readOnly" value="true"/>
+            <property name="cache_size" value="60"/>
+        </plugin>
+     -->
+
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin" />
+        <plugin type="org.mybatis.generator.plugins.VirtualPrimaryKeyPlugin" />
+        <plugin type="com.nbware.framework.mybatis.generator.plugin.liyiorg.MySQLPaginationPlugin" />
+
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+
+		<!-- TESTBED DB-->
+        <!-- Mybatis Generator 1.3.4 부터 Eclipse Luncher 를 통해 설정 할 수 있게 되었음 
+         -->
+<!--         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.220:3306/skymshopsvc" userId="skyusr" password="sky12!@"/> -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://211.106.172.50:3306/skymshopsvc?useSSL=false"
+            userId="skyusr" password="sky12!@" />
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetProject="src/main/java" targetPackage="kr.co.nbware.mshop.commons.dao.generate.model">
+            <property name="enableSubPackages" value="false" />
+            <property name="trimStrings" value="true" />
+			<!--
+				<property name="constructorBased" value="true"/>
+			-->
+            <property name="rootClass" value="com.nbware.framework.model.vo.BaseVo" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetProject="src/main/resources" targetPackage="mapper.commons.generate" />
+
+        <javaClientGenerator type="XMLMAPPER" targetProject="src/main/java"
+            targetPackage="kr.co.nbware.mshop.commons.dao.generate.mapper"
+        >
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+        
+        
+        <table tableName="example" domainObjectName="Example">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="seq" sqlStatement="JDBC" />
+        </table>
+        <table tableName="AgreedUser" domainObjectName="AgreedUser">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="agreedUserNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="AppVersion" domainObjectName="AppVersion">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="appVersionNo" sqlStatement="JDBC" />
+<!--             <columnOverride column="newestYn" javaType="boolean" typeHandler="kr.co.nbware.framework.mybatis.typehandler.YesNoBooleanTypeHandler"/> -->
+<!--             <columnOverride column="updateForceYn" javaType="boolean" typeHandler="kr.co.nbware.framework.mybatis.typehandler.YesNoBooleanTypeHandler"/> -->
+        </table>
+        <table tableName="User" domainObjectName="User">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="userNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="UserAgreement" domainObjectName="UserAgreement">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="UserAgreementNo" sqlStatement="JDBC" />
+<!--             <columnOverride column="displayYn" javaType="boolean" typeHandler="kr.co.nbware.framework.mybatis.typehandler.YesNoBooleanTypeHandler"/> -->
+        </table>
+        <table tableName="IntroEvent" domainObjectName="IntroEvent">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="introEventNo" sqlStatement="JDBC" />
+<!--             <columnOverride column="displayYn" javaType="boolean" typeHandler="kr.co.nbware.framework.mybatis.typehandler.YesNoBooleanTypeHandler"/> -->
+        </table>
+        <table tableName="Viewership" domainObjectName="Viewership">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="viewershipSeq" sqlStatement="JDBC" />
+        </table>
+        <table tableName="viewershipRawData" domainObjectName="ViewershipRawData">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="viewershipRawDataSeq" sqlStatement="JDBC" />
+        </table>
+        <table tableName="Banner" domainObjectName="Banner">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="bannerNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="Code" domainObjectName="Code">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+        <table tableName="CodeGroup" domainObjectName="CodeGroup">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+        <table tableName="Youtube" domainObjectName="Youtube">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+        <table tableName="YoutubeSearchWord" domainObjectName="YoutubeSearchWord">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="YoutubeSearchWordNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="ChannelShopEvent" domainObjectName="ChannelShopEvent">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="channelEventNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="ChannelNotice" domainObjectName="ChannelNotice">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="channelNoticeNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="ChannelShopHome" domainObjectName="ChannelShopHome">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="channelShopHomeNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="ChannelShopPost" domainObjectName="ChannelShopPost">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="channelShopPostNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="GoodsShopGenre" domainObjectName="GoodsShopGenre">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="goodsShopGenreNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="UserGoodsShopGenre" domainObjectName="UserGoodsShopGenre">
+        <!-- 
+            <property name="virtualKeyColumns" value="userNo,goodsShopGenreNo" />
+         -->
+            <property name="useActualColumnNames" value="true" />
+        </table>
+        <table tableName="TvProgSchedule" domainObjectName="TvProgSchedule">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="TvProgScheduleNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="TvProgScheduleTime" domainObjectName="TvProgScheduleTime">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="TvProgScheduleTime" sqlStatement="JDBC" />
+        </table>
+        <table tableName="pplCategory" domainObjectName="pplCategory">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="pplCategoryId" sqlStatement="JDBC" />
+        </table>
+        <table tableName="pplItem" domainObjectName="pplItem">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="pplItemId" sqlStatement="JDBC" />
+        </table>
+        <table tableName="pplItemImg" domainObjectName="pplItemImg">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="pplItemImgSeq" sqlStatement="JDBC" />
+        </table>
+        <table tableName="pplProgramImg" domainObjectName="pplProgramImg">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="pplProgramImgSeq" sqlStatement="JDBC" />
+        </table>
+        <table tableName="EpgGenre" domainObjectName="EpgGenre">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+        <table tableName="EpgSeries" domainObjectName="EpgSeries">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+        <table tableName="EpgProgrammes" domainObjectName="EpgProgrammes">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+        <table tableName="EpgChannel" domainObjectName="EpgChannel">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+         <table tableName="TvProgramEpg" domainObjectName="TvProgramEpg">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="tvProgramEpgNo" sqlStatement="JDBC" />
+        </table>          
+        <table tableName="TvProgramSeries" domainObjectName="TvProgramSeries">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="tvProgramSeriesNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="TvProgramEpisode" domainObjectName="TvProgramEpisode">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="tvProgramEpisodeNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="PartnerShopCategory" domainObjectName="PartnerShopCategory">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="partnerShopCategoryNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="PartnerShopProduct" domainObjectName="PartnerShopProduct">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="partnerShopProductNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="Product" domainObjectName="Product">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="productNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="ProductInTv" domainObjectName="ProductInTv">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="ProductInTvNo" sqlStatement="JDBC" />
+        </table>
+        <table tableName="GoodsShopGenreProduct" domainObjectName="GoodsShopGenreProduct">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+    </context>
+</generatorConfiguration>
