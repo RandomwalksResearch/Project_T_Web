@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE tiles-definitions PUBLIC 
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- Tiles 기본설정 -->
+	<definition name="tilesbase" template="/WEB-INF/views/template/baseTemplate.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp" />
+		<put-attribute name="header_title" value="Project T" />
+		<put-attribute name="nav" value="/WEB-INF/views/nav.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/main.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp" />
+		<put-attribute name="footer_script" value="/WEB-INF/views/template/footerScript.jsp" />
+		<put-attribute name="modal" value="/WEB-INF/views/template/modal.jsp" />
+	</definition>
+
+	<!-- 컨트롤러에서 리턴해 주는 뷰이름 -->
+	<definition name="/views/*" extends="tilesbase">
+		<put-attribute name="title" value="Project T-{1}" />
+		<put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+
+	<definition name="/views/*/*" extends="tilesbase">
+		<put-attribute name="title" value="Project T-{2}" />
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+
+	<definition name="/views/*/*/*" extends="tilesbase">
+		<put-attribute name="title" value="Project T-{3}" />
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+</tiles-definitions>
