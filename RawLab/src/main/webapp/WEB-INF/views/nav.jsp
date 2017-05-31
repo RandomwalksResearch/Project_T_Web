@@ -8,7 +8,7 @@
 				<span class="sr-only">Toggle navigation</span>
 				Menu <i class="fa fa-bars"></i>
 			</button>
-			<a class="navbar-brand page-scroll" href="#page-top">Raw LAB <small><small><small>for randomwalks research</small></small></small></a>
+			<a class="navbar-brand page-scroll" href="#page-top">Random Brain <small><small>by Brainless</small></small></a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -24,13 +24,13 @@
 					<a class="page-scroll" href="#portfolio">Project</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#about">Study</a>
+					<a class="page-scroll" href="#history">History</a>
 				</li>
 				<li>
 					<a class="page-scroll" href="#team">Team</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#contact">Github</a>
+					<a class="page-scroll" href="https://github.com/RandomwalksResearch" target="_blank">Github</a>
 				</li>
 			</ul>
 		</div>

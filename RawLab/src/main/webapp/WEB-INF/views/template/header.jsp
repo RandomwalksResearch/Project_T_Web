@@ -7,6 +7,7 @@
 
 <!-- Font -->
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:200' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
@@ -17,5 +18,5 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <!-- Theme CSS -->
-<link href="${pageContext.request.contextPath}/resources/css/agency.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/agency.css" rel="stylesheet">
 
