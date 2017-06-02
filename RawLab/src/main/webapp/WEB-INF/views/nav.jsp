@@ -8,7 +8,7 @@
 				<span class="sr-only">Toggle navigation</span>
 				Menu <i class="fa fa-bars"></i>
 			</button>
-			<a class="navbar-brand page-scroll" href="#page-top">Random Brain <small><small>by Brainless</small></small></a>
+			<a class="navbar-brand page-scroll" href="#page-top">OreOre Lab.</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->

@@ -6,12 +6,11 @@
 		<div class="container-fluid ng-slide">
 			<div class="intro-text">
 				<div class="intro-heading2">New insights from You</div>
-				<a href="#services" class="page-scroll btn btn-xl">
-					<strong><strong>more </strong></strong>
-					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				<a href="#services" class="page-scroll btn btn-xl"> <strong><strong>more </strong></strong> <span
+						class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 				</a>
 			</div>
-			
+
 			<!-- Carousel ================================================== -->
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
@@ -25,8 +24,7 @@
 						<img class="first-slide" src="${pageContext.request.contextPath}/resources/img/header-bg.jpg" alt="First slide">
 					</div>
 					<div class="item" id="second-slide">
-						<img class="second-slide" src="${pageContext.request.contextPath}/resources/img/header-bg2.jpg"
-							alt="Second slide">
+						<img class="second-slide" src="${pageContext.request.contextPath}/resources/img/header-bg2.jpg" alt="Second slide">
 					</div>
 					<div class="item active" id="third-slide">
 						<img class="third-slide" src="${pageContext.request.contextPath}/resources/img/header-bg3.jpg" alt="Third slide">
@@ -83,7 +81,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading">Project</h2>
-				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+				<h3 class="section-subheading text-muted">Our AI & Data project</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -93,11 +91,11 @@
 						<div class="portfolio-hover-content">
 							<i class="fa fa-plus fa-3x"></i>
 						</div>
-					</div> <img src="${pageContext.request.contextPath}/resources/img/portfolio/roundicons.png" class="img-responsive" alt="">
+					</div> <img src="${pageContext.request.contextPath}/resources/img/portfolio/mnist.jpg" class="img-responsive" alt="">
 				</a>
 				<div class="portfolio-caption">
-					<h4>Round Icons</h4>
-					<p class="text-muted">Graphic Design</p>
+					<h4>MNIST Project</h4>
+					<p class="text-muted">손글씨를 통한 기계학습 & 데모</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-6 portfolio-item">
@@ -106,12 +104,11 @@
 						<div class="portfolio-hover-content">
 							<i class="fa fa-plus fa-3x"></i>
 						</div>
-					</div> <img src="${pageContext.request.contextPath}/resources/img/portfolio/startup-framework.png" class="img-responsive"
-					alt="">
+					</div> <img src="${pageContext.request.contextPath}/resources/img/portfolio/101.jpg" class="img-responsive" alt="">
 				</a>
 				<div class="portfolio-caption">
-					<h4>Startup Framework</h4>
-					<p class="text-muted">Website Design</p>
+					<h4>Produce 101 Project</h4>
+					<p class="text-muted">T-SNE 맵 구현 & 우승자 예측</p>
 				</div>
 			</div>
 			<%-- <div class="col-md-4 col-sm-6 portfolio-item">
@@ -176,7 +173,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading">History</h2>
-				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+				<h3 class="section-subheading text-muted">Our Surprising Amazing Fantastic Story</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -188,13 +185,11 @@
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>2009-2011</h4>
+								<h4>2017</h4>
 								<h4 class="subheading">Our Humble Beginnings</h4>
 							</div>
 							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius
-									sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-									laudantium consectetur!</p>
+								<p class="text-muted">blablablabla!</p>
 							</div>
 						</div>
 					</li>
@@ -204,13 +199,11 @@
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>March 2011</h4>
-								<h4 class="subheading">An Agency is Born</h4>
+								<h4>March 2018</h4>
+								<h4 class="subheading">Facility is Born</h4>
 							</div>
 							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius
-									sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-									laudantium consectetur!</p>
+								<p class="text-muted">blablablabla!</p>
 							</div>
 						</div>
 					</li>
@@ -218,7 +211,7 @@
 					<li class="timeline-inverted">
 						<div class="timeline-image">
 							<h4>
-								Be Part <br>Of Our <br>Story!
+								Data <br>Visualization <br>of Learning!
 							</h4>
 						</div>
 					</li>
