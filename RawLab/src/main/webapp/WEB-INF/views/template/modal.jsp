@@ -16,23 +16,56 @@
 					<div class="col-lg-8 col-lg-offset-2">
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
-							<h2>Project Name</h2>
-							<p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-							<img class="img-responsive img-centered"
-								src="${pageContext.request.contextPath}/resources/img/portfolio/roundicons-free.png" alt="">
-							<p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-								blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae
-								cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-							<p>
-								<strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy
-								of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can
-								purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.
-							</p>
-							<ul class="list-inline">
-								<li>Date: July 2014</li>
-								<li>Client: Round Icons</li>
-								<li>Category: Graphic Design</li>
-							</ul>
+							<h2>MNIST STUDY</h2>
+							<br> <br>
+							<canvas id="canvas" width="300" height="300" style="border: 1px solid #000000; background-color: black"></canvas>
+							<button type="button" class="btn btn-primary" id="canvasToImg">손글씨 저장</button>
+							<p></p>
+							<img id="myDrawing" src="" name="myDrawing">
+							<form action="/web/mnist/imagesave" id="hiddenForm" method="post">
+								<input type="hidden" id="data" name="data"/>
+							</form>
+							<script src="http://www.nihilogic.dk/labs/canvas2image/canvas2image.js"></script>
+							<script>
+								(function() {
+									var canvas = document.getElementById('canvas'), canvasToImg = document
+											.getElementById('canvasToImg'), myDrawing = document
+											.getElementById('myDrawing'), context = canvas.getContext('2d'), isDrawing = false, mousePos;
+
+									canvasToImg.addEventListener('click', function() {
+										var image = canvas.toDataURL("image/jpeg");
+// 										var image = canvas.toDataURL("image/jpeg").replace("image/jpeg",
+// 										"image/octet-stream");
+										$("#data").val(image);
+										$("#hiddenForm").submit();
+									});
+
+									canvas.addEventListener('mousemove', function(e) {
+										mousePos = getMousePos(canvas, e);
+										if (isDrawing) {
+											context.fillStyle = "#FFFFFF";
+											context.fillRect(mousePos.x, mousePos.y, 10, 10);
+										}
+									}, false);
+
+									canvas.addEventListener('mousedown', function(e) {
+										isDrawing = true;
+									}, false);
+
+									canvas.addEventListener('mouseup', function(e) {
+										isDrawing = false;
+									}, false);
+
+									function getMousePos(canvas, e) {
+										var rect = canvas.getBoundingClientRect();
+										return {
+											x : e.clientX - rect.left,
+											y : e.clientY - rect.top
+										};
+									}
+
+								}());
+							</script>
 							<button type="button" class="btn btn-primary" data-dismiss="modal">
 								<i class="fa fa-times"></i> Close Project
 							</button>
